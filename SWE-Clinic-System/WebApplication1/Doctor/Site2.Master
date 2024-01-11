@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="WebApplication1.Site2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+
+      <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+
+      <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+
+      <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+
+      <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+
+      
+    <link rel="stylesheet" href="/styles/doc-homepage.css">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="homepage">
+            <i class="fa-solid fa-bars bars5"></i>
+              <aside class="sidebar5">
+                <a href="/Doctor/doc-homepage.aspx"><img src="/imgs/doctor-logo.png" alt=""></a>
+                <ul class="props5">
+                  <li><a href="#" class="active" title="Home"><i class="fa-solid fa-house"></i></a></li>
+                  <li><a href="#" title="History"><i class="fa-solid fa-clock-rotate-left"></i></a></li>
+                  <li><a href="#" title="Profile"><i class="fa-solid fa-user"></i></a></li>
+                </ul>
+                <div class="logout">
+                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </asp:LinkButton>
+                </div>
+              </aside>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+        <script>
+      let barIcon = document.querySelector(".bars5");
+      let sidebar = document.querySelector("aside.sidebar5");
+      let contentOverlay = document.querySelector(".content5 .overlay5");
+
+      barIcon.onclick = SidebarAppearance;
+      contentOverlay.onclick = SidebarAppearance;
+
+      function SidebarAppearance() {
+        sidebar.classList.toggle("active");
+        barIcon.classList.toggle("clicked")
+        document.body.classList.toggle("freeze");
+        contentOverlay.classList.toggle("show");
+      }
+        </script>
+</body>
+</html>

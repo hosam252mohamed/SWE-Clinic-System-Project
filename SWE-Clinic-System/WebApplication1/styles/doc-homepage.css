@@ -1,0 +1,241 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}
+
+:root {
+  --main-color: #009292;
+  --hover-color: #6c6c6c;
+}
+
+body {
+  position: relative;
+}
+body.freeze {
+  overflow-y: hidden;
+}
+
+.homepage {
+  display: flex;
+}
+
+aside.sidebar5 {
+  background-color: var(--main-color);
+  color: white;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  transition: 0.5s;
+}
+.homepage .bars5 {
+  display: none;
+  position: absolute;
+  top: 18px;
+  left: 28px;
+  color: var(--main-color);
+  transition: 0.3s;
+  font-size: 18px !;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 999;
+}
+.homepage .bars5.clicked {
+  left: 115px;
+  transition-delay: 0.4s;
+  color: #222;
+}
+
+@media (max-width: 768px) {
+  aside.sidebar5 {
+    position: fixed;
+    left: -100%;
+    background-color: #009292e0;
+  }
+  aside.sidebar5.active {
+    left: 0;
+  }
+  .homepage .bars5 {
+    display: initial;
+  }
+}
+
+aside img {
+  width: 65px;
+  margin-top: 20px;
+}
+aside .props5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+  padding: 0;
+}
+aside ul {
+  list-style: none;
+}
+aside a {
+  font-size: 20px;
+  color: white;
+  transition: 0.3s;
+}
+aside ul a.active {
+  background-color: white;
+  color: var(--main-color);
+  width: 30px;
+  height: 30px;
+  box-shadow: 0 2px 3px #555;
+  padding: 7px;
+  border-radius: 5px;
+}
+aside ul a:hover,
+aside .logout a:hover {
+  background-color: white;
+  color: var(--main-color);
+  width: 30px;
+  height: 30px;
+  box-shadow: 0 2px 3px #555;
+  padding: 7px;
+  border-radius: 5px;
+}
+aside .logout {
+  margin-bottom: 20px;
+}
+
+.content5 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px;
+  background-color: #eee;
+  width: calc(100% - 100px);
+}
+@media (max-width: 768px) {
+  .content5 {
+    width: 100%;
+    padding: 50px 25px;
+    min-height: 100vh;
+  }
+}
+.content5 .overlay5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 30%);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  z-index: 2;
+}
+.content5 .overlay5.show {
+  opacity: 1;
+  display: initial;
+  pointer-events: all;
+}
+.content5 .greeting5 {
+  font-size: 22px;
+}
+.content5 .greeting5 span {
+  color: var(--main-color);
+  font-weight: 600;
+}
+.content5 .appointment-calender {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+@media (max-width: 600px) {
+  .content5 .appointment-calender {
+    flex-direction: column;
+    align-items: center;
+  }
+  .content5 .appointment-calender .box5 {
+    width: 100%;
+  }
+}
+
+.content5 .appointment-calender .box5 {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  gap: 15px;
+  width: 250px;
+  box-shadow: 0 0 10px 0 rgb(0, 0, 0, 10%);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.2s;
+}
+@media (max-width: 600px) {
+  .content5 .appointment-calender .box5 {
+    width: 100%;
+  }
+}
+.content5 .appointment-calender .box5:hover {
+  color: #eee;
+}
+.content5 .appointment-calender .box5::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: -100%;
+  background-color: var(--main-color);
+  z-index: -1;
+  transition: 0.3s;
+  color: white;
+}
+.content5 .appointment-calender .box5:hover::before {
+  top: 0;
+}
+.content5 .appointment-calender .box5 .left5 {
+  display: flex;
+  align-items: center;
+}
+.content5 .appointment-calender .box5 .left5 i {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: 0.2s;
+}
+.content5 .appointment-calender .box5:hover .left5 i {
+  background-color: #eee;
+  color: var(--main-color);
+}
+.content5 .appointment-calender .box5 .right5 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.content5 .appointment-calender .box5 .right5 .number {
+  font-size: 35px;
+}
+
+.content5 .appointments {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

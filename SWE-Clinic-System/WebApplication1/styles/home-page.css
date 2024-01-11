@@ -1,0 +1,197 @@
+* {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --main-color: #008484;
+    --hover-color: #6c6c6c;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.skewed-bg {
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    padding: 150px 0;
+    width: 100%;
+    transform: skew(0deg, -12deg);
+    margin-top: -200px;
+    height: 170px;
+    z-index: 900;
+}
+
+h1 {
+    color: white;
+    position: relative;
+    font-size: 70px;
+    margin: 150px 0 0 30px;
+    transform: skewy(12deg);
+}
+
+.home{
+    margin: 10px 30px;
+    color: white;
+    transform: skewy(12deg);
+    
+}
+
+.content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    padding-bottom: 50px;
+}
+
+.header {
+    margin: 65px 0 90px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.panel {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 100%;
+    gap:20px;
+}
+
+.account {
+    background-color: #f9f9f9;
+    font-size: 20px;
+    padding: 63px 29px;
+    width: 380px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px #a29e9e;
+}
+
+.account:hover {
+    transform: translatey(-15px);
+    box-shadow: 5px 5px 5px 5px #a29e9e;
+    transition: 0.4s;
+}
+
+.account img {
+    width: 110px;
+}
+
+.account-header {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.account-features {
+    margin: 40px 0 25px;
+    color: black;
+}
+
+.account-features-item {
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 15px 0;
+}
+
+.account-button {
+    border: 2px solid var(--main-color);
+    border-radius: 6px;
+    color: black;
+    display: inline-block;
+    padding: 15px 40px;
+    text-decoration: none;
+    margin-top: 30px;
+    transition: background-color 200ms ease-in-out;
+    font-weight: bold;
+}
+
+.account-button:hover,
+.account-button:focus {
+    color: white;
+    transition: 0.3s;
+    background-color: var(--hover-color);
+}
+
+@media only screen and (max-width: 899px) {
+    .skewed-bg {
+        padding: 100px 0;
+        margin-top: -150px;
+        height: 130px;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin: 100px 20px;
+    }
+
+    .home{
+        margin: -90px 20px;
+    }
+
+    .header {
+        margin: 65px 0 60px;
+        font-size: 24px;
+    }
+
+    .panel {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .account {
+        width: 90%;
+        max-width: 300px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 749px) {
+    .skewed-bg {
+        padding: 100px 0;
+        margin-top: -150px;
+        height: 130px;
+    }
+
+    h1 {
+        font-size: 45px;
+        margin: 100px 20px;
+    }
+
+    .header {
+        margin: 40px 0 60px;
+        font-size: 24px;
+    }
+
+    .panel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .account {
+        width: 90%;
+        max-width: 300px;
+        margin-bottom: 10px;
+    }
+}
